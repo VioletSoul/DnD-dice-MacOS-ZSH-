@@ -9,9 +9,9 @@ echo "---------------------------------"
 echo "d4  - Four-sided die (tetrahedron)"
 echo "d6  - Six-sided die (cube)"
 echo "d8  - Eight-sided die (octahedron)"
-echo "d10 - Ten-sided die (pentagonal trapezohedron)"
-echo "d12 - Twelve-sided die (dodecahedron) - normal"
-echo "d12 - Twelve-sided die (dodecahedron) - percentile (used for percentages)"
+echo "d10 (regular) - Ten-sided die (pentagonal trapezohedron)"
+echo "d10 (percentile) - Ten-sided die (for percentages)"
+echo "d12 - Twelve-sided die (dodecahedron)"
 echo "d20 - Twenty-sided die (icosahedron)"
 echo
 
@@ -28,40 +28,32 @@ total=0
 
 echo "Rolling the 7 standard DnD dice:"
 
-# Roll d4, d6, d8, d10 normally first
-for die in d4 d6 d8 d10; do
+# Roll d4, d6, d8
+for die in d4 d6 d8; do
   case $die in
     d4) sides=4 ;;
     d6) sides=6 ;;
     d8) sides=8 ;;
-    d10) sides=10 ;;
   esac
   result=$(roll_die $sides)
   echo "$die: $result"
   (( total += result ))
 done
 
-# Roll first d12 (normal)
-d12_normal=$(roll_die 12)
-echo "d12 (normal): $d12_normal"
-(( total += d12_normal ))
+# Roll first d10 (regular)
+d10_regular=$(roll_die 10)
+echo "d10 (regular): $d10_regular"
+(( total += d10_regular ))
 
-# Roll second d12 (percentile), ensuring it differs from first d12
-max_attempts=100
-attempt=0
-while true; do
-  d12_percentile=$(roll_die 12)
-  (( attempt++ ))
-  if [[ $d12_percentile -ne $d12_normal ]]; then
-    break
-  fi
-  if (( attempt >= max_attempts )); then
-    # Safety fallback: accept duplicate after many tries
-    break
-  fi
-done
-echo "d12 (percentile): $d12_percentile"
-(( total += d12_percentile ))
+# Roll second d10 (percentile)
+d10_percentile=$(roll_die 10)
+echo "d10 (percentile): $d10_percentile"
+(( total += d10_percentile ))
+
+# Roll d12
+d12=$(roll_die 12)
+echo "d12: $d12"
+(( total += d12 ))
 
 # Finally roll d20
 d20=$(roll_die 20)
