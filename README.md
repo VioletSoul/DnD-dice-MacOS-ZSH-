@@ -1,5 +1,10 @@
 # DnD Dice Roller (zsh script)
 
+![Shell](https://img.shields.io/badge/Shell-zsh-4EAA25?style=flat&logo=gnu-bash&logoColor=white)
+![OS](https://img.shields.io/badge/OS-macOS-000000?style=flat&logo=apple&logoColor=white)
+![D&D](https://img.shields.io/badge/Game-D&D-EF1E1E?style=flat&logo=dungeons-and-dragons&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue)
+
 A simple and reliable zsh script for macOS that simulates rolling the seven standard Dungeons & Dragons dice:
 
 - **d4** (four-sided)
