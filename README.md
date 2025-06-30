@@ -4,6 +4,8 @@
 ![OS](https://img.shields.io/badge/OS-macOS-000000?style=flat&logo=apple&logoColor=white)
 ![D&D](https://img.shields.io/badge/Game-D&D-EF1E1E?style=flat&logo=dungeons-and-dragons&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-blue)
+![Repo Size](https://img.shields.io/github/repo-size/VioletSoul/DnD-dice-MacOS-ZSH-)
+![Code Size](https://img.shields.io/github/languages/code-size/VioletSoul/DnD-dice-MacOS-ZSH-)
 
 A simple and reliable zsh script for macOS that simulates rolling the seven standard Dungeons & Dragons dice:
 
